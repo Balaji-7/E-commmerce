@@ -1,0 +1,28 @@
+
+
+img{
+    height: 150px;
+}
+
+.category{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.menu{
+    height: 200px;
+    background: grey;
+    color: white;
+    margin: 20px;
+    flex-basis: 40%;
+    padding: 10px;
+    flex-grow: 1;
+    
+}
+.menu > h1{
+    display: inline;
+    padding-left: 50px;
+    font-size: 50px;
+    font-weight: bolder;
+}

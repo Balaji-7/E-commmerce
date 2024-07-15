@@ -1,0 +1,30 @@
+
+.category-name{
+    margin-left: 40%;
+    background: magenta;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.category>img{
+    width: 300px;
+    height: 400px;
+}
+.category{
+      
+    padding: 20px;
+    margin-right: 10px; 
+}
+.category-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.explore{
+    background: rgb(128, 236, 240);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 20px;
+    border: 2px solid springgreen;
+    border-radius: 20px;
+}

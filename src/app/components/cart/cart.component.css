@@ -1,0 +1,58 @@
+.cart-container{
+    display: flex;
+}
+
+.cart-buy> h1{
+    margin-left: 500px;
+}
+.cart-buy > button{
+    margin-left: 350px;
+    width: 600px;
+    padding: 20px;
+    background: yellow;
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 30px;
+    border: 2px solid white;
+
+}
+
+.quantity{
+    border: 3px solid black;
+    width: fit-content;
+    padding: 10px;
+}
+
+.product{
+    margin-top: 70px;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.desc{
+    margin-left: 70px;
+    margin-top: 50px;
+    width: 80%;
+    
+}
+
+.desc>button{
+    background: yellow;
+    font-size: 20px;
+    margin-right: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin-bottom: 20px;
+}
+.select-all{
+    margin-left: 80px;
+    font-size: 25px;
+    color: royalblue;
+    
+}
+button:hover{
+    cursor: pointer;
+}
+
+

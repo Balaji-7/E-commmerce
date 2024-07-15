@@ -1,0 +1,61 @@
+.container{
+    overflow: hidden;
+}
+
+
+.container:hover{
+    cursor: pointer;
+}
+hr{
+    border-color:brown;
+    
+}
+
+.location>h3{
+    display: inline-block;
+    margin-left: 30px;
+    background: royalblue;
+    color:white;
+    padding: 10px;
+}
+.produt-categories{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.products{
+    width: 120px;
+    margin: 10px;
+    flex-basis: 5%;
+}
+.desc{
+    margin-left: 10px;
+    color: orange;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.deals-head{
+    font-size: 50px;
+    margin-left: 40px;
+    color: red;
+    display: inline-block;
+}
+
+.deals-container{
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+    gap: 50px;
+}
+.deal > p{
+    color: red;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+
+
+

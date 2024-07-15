@@ -1,0 +1,54 @@
+<!-- <img [src]="productimg['imgurl']"> -->
+
+<div class="product-container">
+    <div class="product">
+        <!-- VIVO T3X 5G <img src="https://exstatic-in.vivo.com/Oz84QB3Wo0uns8j1/in/1713261480685/1d7088825285b6052a6220d99cd658f2.png_w860-h860.webp"  -->
+        <img [src]= "productimg['imgurl']" 
+        width="500px" height="500px">
+       <h3 style="background: rebeccapurple; color: white;margin: 80px; width: fit-content;padding: 20px;">Click to See full Preview</h3>
+    </div>
+    <div class="info">
+        <h1>{{productimg['productname']}} (Stardust Black, 6GB RAM, 128GB Storage) | Powered by 4G MediaTek Helio G85 | 90Hz Display | 50MP AI Triple Camera</h1>
+        <h2>4.1 ⭐⭐⭐⭐ &nbsp;&nbsp; 5,419 ratings </h2>
+        <p>5K+ bought this month</p>
+        <hr>    
+        <h1><span>-37%</span>  &nbsp; ₹ 25,000</h1>
+        <p class="MRP">MRP:- 35000/-</p>
+        <p>Inclusive of all taxes
+           <b> EMI </b> starts at ₹412. No Cost EMI available 
+         </p>
+        <br>
+       <button class="addtocart" (click)="addToCart()">Add to Cart</button>
+       
+       <!-- <button class="addtocart" (click)="viewcart()">View Cart</button> -->
+       <button class="Buy">Buy Now</button>
+       <p class="addmsg" *ngIf="isadded">Product Added in the Cart Successfully <a (click)="viewcart()">View Cart</a></p>
+
+    </div>
+</div>
+
+
+<div class="similar-product-container">
+    <h1>Similiar products</h1>
+    <div class="sm-product" (click)="productdetailview($event,'Vivov20')">
+        <img src="https://mintemi.in/wp-content/uploads/2020/10/138402-v6-vivo-v20-mobile-phone-large-1.jpg">
+    </div>
+    <div class="sm-product" (click)="productdetailview($event,'OPPO A57')">
+        <img src="https://cdn1.smartprix.com/rx-iuvs4uvlM-w1200-h1200/uvs4uvlM.jpg">
+
+    </div>
+    <div class="sm-product" (click)="productdetailview($event,'Galaxy S23')">
+        <img src="https://cdn1.smartprix.com/rx-ifgMKUMYY-w1200-h1200/fgMKUMYY.jpg">
+
+    </div>
+    <div class="sm-product" (click)="productdetailview($event,'apple 14')">
+        <img src="https://www.aptronixindia.com/pub/media/catalog/product/i/p/iphone-12-red_6.png">
+
+    </div>
+    <div class="sm-product" (click)="productdetailview($event,'iqooz7 pro')">
+        <img src="https://m.media-amazon.com/images/I/61Id6WJDWqL.jpg">
+    </div>
+    <div class="sm-product" (click)="productdetailview($event,'Honor X9a')">
+        <img src="https://5.imimg.com/data5/ECOM/Default/2024/1/377238269/DW/BU/YJ/47699750/0-56364000-1679292868-honor-x9a-5g-rmo-nx1-dual-sim-256gb-titanium-silver-8gb-ram-global-version-500x500.jpg">
+    </div>
+</div>

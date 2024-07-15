@@ -1,0 +1,114 @@
+.product-container{
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 20px;
+}
+.product{
+    width: 400px;
+    
+}
+.MRP{
+    text-decoration: line-through;
+    font-weight: bolder;
+}
+span{
+    color: red;
+}
+.info{
+    background: whitesmoke;
+    border: 2px solid gold;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 200px;
+
+    width:700px;
+}
+
+
+h1{
+    width: fit-content;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 40px;
+
+}
+h2{
+    margin-left: 20px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+p{
+    margin-left: 20px;
+    /* margin-top: 10px; */
+    font-size: 20px;
+   
+}
+
+button{
+    background: yellowgreen;
+    /* color: white; */
+    border: 2px solid gold;
+    border-radius: 30px;
+    margin: 30px;
+    padding: 25px;
+    font-size: 30px;
+}
+
+.sm-product{
+    display: inline-block;
+
+}
+
+.addmsg{
+    display: inline-block;
+}
+a{
+    display: inline-block;
+    text-decoration: underline;
+    font-size: 30px;
+    color: blue;
+}
+
+.sm-product > img{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:1420px) {
+
+    .info{
+        width: 500px;
+        margin:0 0 0 100px;
+    }
+}
+
+@media screen and (max-width:1120px) {
+    .product>img{
+        width: 400px;
+    }
+    .info{
+        width: 500px;
+        margin:0 0 0 10px;
+    }
+}
+
+@media screen and (max-width:1060px) {
+    .product>img{
+        width: 600px;
+    }
+    
+    .info{
+        width: 800px;
+        flex-basis:70%;
+        margin:0px;
+    }
+}
+

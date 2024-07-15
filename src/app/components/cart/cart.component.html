@@ -1,0 +1,31 @@
+
+<div class="cart-buy">
+<h1>{{cartitemscount}} Items Selected</h1>
+    <button class="buy">Proceed to Buy ( {{cartitemscount}} Items) INR {{carttotalamount}}</button>
+
+</div>
+<p class="select-all"> 
+<input type="checkbox"> &nbsp;Select all items
+</p>
+<div *ngFor="let product of productimg">
+<div class="cart-container" >
+    
+    <div class="product">
+        <img [src]="product.imgurl"
+        width="200px" height="200px">
+       
+        
+    </div>
+    <div class="desc">
+    <h1>{{product.productname}}(Stardust Black, 6GB RAM, 128GB Storage) | Powered by 4G MediaTek Helio G85 | 90Hz Display | 
+        50MP AI Triple Camera</h1>
+        <p>400+ bought this Month</p>
+        <h1> RS.{{product.count * product.price}}</h1>
+        <h3>In stock</h3>
+        <h1 class="quantity"> Quantity ➖ | {{product.count}} |  ➕</h1>
+        <button>Delete</button>
+        <button>See More Like this</button>
+    </div>
+</div>
+<hr>
+</div>

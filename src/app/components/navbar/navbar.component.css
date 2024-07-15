@@ -1,0 +1,113 @@
+.nav-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    background: skyblue;
+    height: 100px;
+    border: 2px solid white;
+    position: sticky;
+    top: 0;
+    z-index: 1000
+}
+.nav-container:hover{
+    cursor: pointer;
+}
+.nav-container>h1{
+    margin-left: 20px;
+    font-family:cursive;
+    border-radius: 10%;
+    
+}
+.nav-container>button:hover{
+    cursor: pointer;
+}
+input{
+    width: 500px;
+    border-radius: 10%;
+}
+
+.nav-container>ul{
+    list-style: none;
+    display: flex;
+    margin-top: 20px;
+
+}
+.nav-container>ul>li{
+    background: black;
+    color: white;
+    margin-right: 30px;
+    margin-left: 20px;
+    padding: 10px;
+    height:fit-content;
+    font-size: 25px;
+}
+
+
+
+@media screen and (max-width:1425px) {
+    h1{
+        display: inline-block;
+        height: 5px;
+    }
+    .nav-container{
+       
+        height: 180px
+    }
+    .nav-container>ul{
+        
+        display: inline;  
+    }
+   .nav-container>input{
+    color: red;
+   }
+    .nav-container>ul>li{
+        display: inline-block;
+        margin: 5px;
+    }
+    input{
+        height: 80px;
+    }
+}
+
+@media screen and (max-width:1127px) {
+    h1{
+        display: inline-block;
+        height: 5px;
+    }
+    .nav-container{
+        height: 200px;
+    }
+   
+    .nav-container>ul>li{
+        display: inline-block;
+        
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width:700px) {
+
+    h1{
+        display: inline-block;
+        height: 15px;
+    }
+   input{
+    margin-top: 20px;
+   }
+    .nav-container{
+        height: 280px;
+    }
+    .nav-container>ul>li{
+        display: inline-block;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    
+    .nav-container{
+        height: 350px;
+    }
+}
