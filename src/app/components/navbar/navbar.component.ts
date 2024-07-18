@@ -24,7 +24,7 @@ export class NavbarComponent {
   }
   login(){
     console.log("Login  Page")
+    this.route.navigate(['userinfo'])
   }
-
-
+ 
 }

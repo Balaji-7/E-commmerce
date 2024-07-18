@@ -1,1 +1,48 @@
-<p>userinformation works!</p>
+<!-- <div *ngFor="let product of response">
+    <img [src]="product.image" alt="" width="200px" height="200px">
+    
+</div> -->
+<div class="info-container" *ngIf="openreg">
+    <h1>REGISTER </h1>
+    <form>
+        <label for="Username">Name:</label>
+        <input type="text" placeholder="Enter Your name"><br>
+        <label for="useremail">Email:</label>
+        <input type="email" placeholder="Enter your Email id"><br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder= "Enter Your password"><br>
+        <label for="mobile">Mobile:</label>
+        <input type="number" placeholder="Enter your Mobile Number"><br><br>
+         <h2>Address</h2>
+        <label for="Address">Street:</label>
+
+        <input type="text" placeholder="Enter Your street Name"><br>
+        <label for="Address">City:</label>
+
+        <input type="text" placeholder="Enter Your city Name"><br>
+        <label for="Address">State:</label>
+
+        <input type="text" placeholder="Enter Your state name"><br>
+        <label for="Address">Country:</label>
+
+        <input type="text" placeholder="Enter Your Country name"><br>
+        <label for="pincode">Pincode:</label>
+        <input type="number" placeholder="Enter Your pincode"><br>
+        <input type="submit" (click)="register()" value="REGISTER">
+
+        <input type="submit" (click)="openlogin()" value="(Existing User)  LOGIN">
+
+    </form>
+</div>
+
+<div class="login-container" *ngIf="!openreg">
+    <h2>LOGIN</h2>
+    <form>
+        <label for="useremail">Email:</label>
+        <input type="email" id="useremail" name="useremail" placeholder="Enter your Email"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your Password"><br>
+        <input type="submit" (click)="login()" value="LOGIN">
+        <input type="submit" (click)="openregister()" value="(New user) REGISTER">
+    </form>
+</div>

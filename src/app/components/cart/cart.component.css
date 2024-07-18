@@ -3,10 +3,10 @@
 }
 
 .cart-buy> h1{
-    margin-left: 500px;
+    margin-left: 20%;
 }
 .cart-buy > button{
-    margin-left: 350px;
+    margin-left: 10%;
     width: 600px;
     padding: 20px;
     background: yellow;
@@ -32,7 +32,7 @@
 .desc{
     margin-left: 70px;
     margin-top: 50px;
-    width: 80%;
+    width: 50%;
     
 }
 
@@ -48,11 +48,46 @@
 .select-all{
     margin-left: 80px;
     font-size: 25px;
-    color: royalblue;
-    
+    color: royalblue; 
 }
+.stock{
+    color: rebeccapurple;
+    text-decoration: underline;
+}
+.check{
+    margin-bottom: 30px;
+}
+
 button:hover{
     cursor: pointer;
 }
 
+@media screen and (max-width:710px) {
+    .select-all{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .cart-buy>button{
+        margin-left: 25px;
+        padding: 10px;
+        font-size: 20px;
+        width: fit-content;
+    }
+    .desc>button{
+        margin: 5px;
+        padding: 10px;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: bolder;
 
+    }
+    .product{
+        margin-top: 10%;
+    }
+    .desc{
+        margin-left: 10px;
+    }
+    .quantity{
+        font-size: 15px;
+    }
+}

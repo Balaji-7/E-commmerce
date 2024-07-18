@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FetchService } from 'src/app/services/fetch.service';
-import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-productdetailview',
@@ -14,7 +14,7 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
     "productname": ''
   }
   public isadded =false
-  constructor(private route: ActivatedRoute, public fetch: FetchService, public router: Router, public location: Location) {
+  constructor(private route: ActivatedRoute, public fetch: FetchService, public router: Router) {
 
   }
 
@@ -60,10 +60,10 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
       }
 
       if (!found) {
-        this.fetch.cartitems.push({ ...this.productimg, count: 1 ,price:25000});
+        this.fetch.cartitems.push({ ...this.productimg, count: 1 ,price:25000,isselected:true});
       }
     } else {
-      this.fetch.cartitems.push({ ...this.productimg, count: 1,price:25000 });
+      this.fetch.cartitems.push({ ...this.productimg, count: 1,price:25000,isselected:true });
     }
     this.isadded = true
   }

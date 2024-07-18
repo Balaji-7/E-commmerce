@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { skip } from 'rxjs';
 import { FetchService } from 'src/app/services/fetch.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class CartComponent implements OnInit {
   public productimg: any = []
   public cartitemscount: any = 0
   public carttotalamount: any = 0
-
+  // public checked = true
+  selectAllChecked: boolean = true;
   constructor(public fetch: FetchService) {
 
   }
@@ -19,12 +21,40 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.productimg = this.fetch.cartitems
     console.log(this.productimg)
-    this.cartitemscount = this.productimg.length ? this.productimg.length : 0
-    this.carttotalamount = this.productimg.map((ele:any) => {
-      return ele.count * ele.price
+    this.calculateCartAmount()
+  }
+
+  isselect(){
+    console.log("isselected")
+  }
+  productcheckchanged(){
+    this.selectAllChecked = this.productimg.forEach((item:any) => item.isselected);
+    this.calculateCartAmount()
+  }
+
+  selectallchanged(){
+    
+    if(this.selectAllChecked){
+      this.productimg.forEach((item:any) => item.isselected = true);
+      this.calculateCartAmount()
+    }
+    else{
+      this.productimg.forEach((item:any) => item.isselected = false);
+      this.cartitemscount = 0
+      this.carttotalamount = 0
+    }
+  }
+
+  calculateCartAmount(){
+    this.cartitemscount = 0
+    this.carttotalamount = this.productimg.filter((ele:any) => ele.isselected)
+    .map((ele:any) => {
+      this.cartitemscount +=1
+      return ele.count * ele.price 
     }).reduce((val1:any, val2:any) => {
       return val1 + val2
-    })
+    },0)
     console.log(this.carttotalamount)
   }
+
 }

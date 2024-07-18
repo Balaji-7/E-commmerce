@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FetchService } from 'src/app/services/fetch.service';
 
@@ -7,7 +7,7 @@ import { FetchService } from 'src/app/services/fetch.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy {
 
   public ismore = false;
 
@@ -22,6 +22,7 @@ export class HomeComponent {
   constructor(public route:Router,public fetch:FetchService){
 
   }
+
 
   changeurl = setInterval(()=>{
     this.next()
@@ -62,6 +63,8 @@ export class HomeComponent {
     this.route.navigate(['productdetailview'])
     
   }
-
+  ngOnDestroy(){
+    clearInterval(this.changeurl)
+  }
   
 }

@@ -7,7 +7,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { UserinformationComponent } from './components/userinformation/userinformation.component';
 
-
 const routes: Routes = [
   {path:'', redirectTo:"/home", pathMatch:'full'},
   {path:'home', component:HomeComponent},
