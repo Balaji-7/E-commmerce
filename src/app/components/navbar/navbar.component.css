@@ -84,6 +84,29 @@ ul>li{
 }
 
 
+@media screen and (max-width:680px) {
+    .nav-container{
+        justify-content: center;
+        flex-direction: row;
+    }
+    h1{
+        font-size: 20px;
+        margin-right: 40px;
+    }
+    input{
+        margin-top: 15px;
+        font-size:8px;
+        height: 20px;
+    }
+    ul{
+        font-size: 10px;
+    }
+    ul>li{
+        font-size: 15px;
+    }
+}
+
+
 @media screen and (max-width:500px) {
     .nav-container{
         justify-content: center;
