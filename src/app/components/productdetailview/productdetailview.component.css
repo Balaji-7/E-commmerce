@@ -11,7 +11,12 @@ h3{
     padding: 10px;
     width: fit-content;
 }
-
+.MRP{
+    text-decoration:line-through;
+}
+span{
+    color: red;
+}
 .product{
     width: fit-content;
     height: fit-content;
@@ -59,6 +64,44 @@ p>a{
         font-size: 15px;
     }
 }
+
+@media screen and (max-width:650px) {
+    .product>img{
+        margin-top: 10%;
+        width: 200px;
+        height: 300px;
+    }
+    .product-container{
+        gap: 30px;
+    }
+    .info{
+        margin-top: 30px;
+    }
+    .info>h1,h2{
+        font-size: 15px;
+    }
+    .info>button{
+        font-size: 10px;
+        margin: 2px;
+        padding: 7px;
+    }
+    .addmsg{
+        font-size: 10px;
+    }
+    p>a{
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* .product-container{

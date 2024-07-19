@@ -119,3 +119,26 @@ hr{
         height: 150px;
     }
 }
+
+@media screen and (max-width:500px) {
+    .location{
+        margin: 0px;
+        font-size: 10px;
+        padding: 2px;
+    }
+    .deals-head{
+        font-size: 20px;
+        margin-left: 35%;
+    }
+    .deal{
+        margin: 0px;
+
+    }
+    .deal>img{
+        width: 200px;
+        height: 200px;
+    }
+    .deal>p{
+        font-size: 15px;
+    }
+}
