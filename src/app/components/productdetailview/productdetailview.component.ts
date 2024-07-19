@@ -13,6 +13,7 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
     "imgurl": '',
     "productname": ''
   }
+  public preview = false
   public isadded =false
   constructor(private route: ActivatedRoute, public fetch: FetchService, public router: Router) {
 
@@ -46,7 +47,10 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
 
   }
 
- 
+  buy(product:any){
+    product['price'] = 25000
+    this.fetch.buy(product)
+  }
 
   addToCart() {
     if (this.fetch.cartitems.length > 0) {
@@ -70,6 +74,9 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
   
   viewcart(){
     this.router.navigate(['cart'])
+  }
+  topreview(){
+    this.preview = !this.preview
   }
 
   ngOnDestroy() {

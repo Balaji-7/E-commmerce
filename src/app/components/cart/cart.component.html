@@ -1,7 +1,7 @@
 
 <div class="cart-buy">
 <h1>{{cartitemscount}} Items Selected</h1>
-    <button class="buy">Proceed to Buy ( {{cartitemscount}} Items) INR {{carttotalamount}}</button>
+    <button class="buy" (click)="cartbuy()">Proceed to Buy ( {{cartitemscount}} Items) INR {{carttotalamount}}</button>
 
 </div>
 <p class="select-all">
@@ -23,8 +23,9 @@
         <p>400+ bought this Month</p>
         <h1> RS.{{product.count * product.price}}</h1>
         <h3 class="stock">In stock</h3>
-        <h1 class="quantity"> Quantity ➖ | {{product.count}} |  ➕</h1>
-        <button>Delete</button>
+        <button (click)="buy(product)">Buy Now</button>
+        <h1 class="quantity"> Quantity <span (click)="quantitycount(product.productname,'decrease')"> ➖ </span>| {{product.count}} | <span (click)="quantitycount(product.productname,'increase')"> ➕ </span></h1>
+        <button (click)="removeFromCart(product.productname)">Delete</button>
         <button>See More Like this</button>
     </div>
 </div>

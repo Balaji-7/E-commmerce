@@ -10,6 +10,9 @@
     top: 0px; 
     
 }
+.nav-container>h1,ul:hover{
+    cursor: pointer;
+}
 
 input{
     margin-top: 10px;
