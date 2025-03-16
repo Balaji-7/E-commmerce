@@ -10,6 +10,7 @@ export class ProductsComponent {
   public productCategories:any
   
   constructor(public fetch:FetchService){
+    window.scrollTo(0, 0);
     this.productCategories = fetch.productCategories
   }
 

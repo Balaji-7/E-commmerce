@@ -1,35 +1,29 @@
-<!-- <img [src]="productimg['imgurl']"> -->
-
+<!-- Product Detail View -->
 <div class="product-container">
     <div class="product">
-        <!-- VIVO T3X 5G <img src="https://exstatic-in.vivo.com/Oz84QB3Wo0uns8j1/in/1713261480685/1d7088825285b6052a6220d99cd658f2.png_w860-h860.webp"  -->
-        <img [src]= "productimg['imgurl']" 
-        width="400px" height="500px">
-       
-       <!-- <h3 style="background: rebeccapurple; color: white;margin: 80px; width: fit-content;padding: 20px;">Click to See full Preview</h3> -->
-        <h3 (click)="topreview()">Click to See full Preview</h3>
+        <img [src]="productimg['productimg']" class="product-image">
+        <h3 class="preview-text" (click)="topreview()">🔍 Click to See Full Preview</h3>
     </div>
     <div class="info">
-        <h1>{{productimg['productname']}} (Stardust Black, 6GB RAM, 128GB Storage) | Powered by 4G MediaTek Helio G85 | 90Hz Display | 50MP AI Triple Camera</h1>
-        <h2>4.1 ⭐⭐⭐⭐ &nbsp;&nbsp; 5,419 ratings </h2>
-        <p>5K+ bought this month</p>
-        <hr>    
-        <h1><span>-37%</span>  &nbsp; ₹ 25,000</h1>
-        <p class="MRP">MRP:- 35000/-</p>
-        <p>Inclusive of all taxes
-           <b> EMI </b> starts at ₹412. No Cost EMI available 
-         </p>
-        <br>
-       <p class="addmsg" *ngIf="isadded">Product Added in the Cart Successfully... <a (click)="viewcart()">View Cart</a></p>
-
-       <button class="addtocart" (click)="addToCart()">Add to Cart</button>
-       
-       <!-- <button class="addtocart" (click)="viewcart()">View Cart</button> -->
-       <button class="Buy" (click)="buy(productimg)">Buy Now</button>
-
+        <h1 class="product-title">{{productimg['productname']}} (Stardust Black, 6GB RAM, 128GB Storage)</h1>
+        <p class="product-subtitle">Powered by 4G MediaTek Helio G85 | 90Hz Display | 50MP AI Triple Camera</p>
+        
+        <h2 class="rating">4.1 ⭐⭐⭐⭐ <span class="rating-count">(5,419 ratings)</span></h2>
+        <p class="sales-info">🔥 5K+ bought this month</p>
+        <hr>
+        
+        <h1 class="price"><span class="discount">-37%</span> ₹ 25,000</h1>
+        <p class="mrp">MRP: <del>₹ 35,000</del></p>
+        <p class="tax-info">Inclusive of all taxes | <b>EMI</b> starts at ₹412. No Cost EMI available</p>
+        
+        <p class="addmsg" *ngIf="isadded">✅ Product Added to Cart Successfully... <a class="view-cart" (click)="viewcart()">View Cart</a></p>
+        
+        <button class="addtocart" [disabled]="isadded" (click)="addToCart()">🛒 Add to Cart</button>
+        <button class="buy" (click)="buy(productimg)">⚡ Buy Now</button>
     </div>
 </div>
 
+<!-- Full Image Preview -->
 <div class="preview" *ngIf="preview">
-    <img src="https://exstatic-in.vivo.com/Oz84QB3Wo0uns8j1/in/1713261480685/1d7088825285b6052a6220d99cd658f2.png_w860-h860.webp">
+    <img src="https://exstatic-in.vivo.com/Oz84QB3Wo0uns8j1/in/1713261480685/1d7088825285b6052a6220d99cd658f2.png_w860-h860.webp" class="preview-image">
 </div>

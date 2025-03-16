@@ -8,9 +8,10 @@ import { FetchService } from 'src/app/services/fetch.service';
   templateUrl: './productdetailview.component.html',
   styleUrls: ['./productdetailview.component.css']
 })
+
 export class ProductdetailviewComponent implements OnInit, OnDestroy {
   public productimg: any = {
-    "imgurl": '',
+    "productimg": '',
     "productname": ''
   }
   public preview = false
@@ -32,13 +33,13 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
 
     if (!this.productimg) {
       this.productimg = {}
-      this.productimg['imgurl'] = event.target.currentSrc
+      this.productimg['productimg'] = event.target.currentSrc
       this.productimg['productname'] = title
       localStorage.setItem("product", JSON.stringify(this.productimg))
 
     } else {
 
-      this.productimg['imgurl'] = event.target.currentSrc
+      this.productimg['productimg'] = event.target.currentSrc
       this.productimg['productname'] = title
       localStorage.setItem("product", JSON.stringify(this.productimg))
     }
@@ -56,8 +57,8 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
     if (this.fetch.cartitems.length > 0) {
       let found = false;
       for (let element of this.fetch.cartitems) {
-        if (element['imgurl'] === this.productimg['imgurl']) {
-          element['count'] = element['count'] + 1;
+        if (element['productimg'] === this.productimg['productimg']) {
+          element['count'] = Number(element['count']) + 1;
           found = true; 
           break; 
         }
@@ -70,15 +71,23 @@ export class ProductdetailviewComponent implements OnInit, OnDestroy {
       this.fetch.cartitems.push({ ...this.productimg, count: 1,price:25000,isselected:true });
     }
     this.isadded = true
+    this.fetch.storecartitem(this.productimg)
   }
+
+
+  
   
   viewcart(){
+    this.isadded = !this.isadded;
     this.router.navigate(['cart'])
   }
   topreview(){
     this.preview = !this.preview
+    
+
   }
 
+  
   ngOnDestroy() {
     console.log("destroy", this.router.url)
     this.productimg = this.fetch.product;

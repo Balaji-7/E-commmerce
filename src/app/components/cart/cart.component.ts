@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
   public carttotalamount: any = 0
   selectAllChecked: boolean = true;
   constructor(public fetch: FetchService,public route:Router) {
-
+    window.scrollTo(0, 0);
   }
 
   ngOnInit() {
@@ -51,16 +51,18 @@ export class CartComponent implements OnInit {
     }
   }
 
-  quantitycount(productname:string,opeartion:string){
+  quantitycount(product:any,opeartion:string){
     this.productimg.map((ele:any)=>{
-      if(ele.productname == productname && opeartion == "increase"){
-        ele.count +=1;
+      if(ele.productname == product.productname && opeartion == "increase"){
+        // ele.count +=1;
+        ele.count = Number(ele.count) + 1
         this.calculateCartAmount()
-      }else{
-        ele.count >= 2 ? ele.count -=1 : ele.count =1
+      }else if(ele.productname == product.productname && opeartion == "decrease"){
+        ele.count >= 2 ? ele.count = Number(ele.count) -1 : ele.count =1
         this.calculateCartAmount()
       }
     })
+    this.fetch.storecartitem(product,true)
   }
 
 
@@ -122,9 +124,11 @@ export class CartComponent implements OnInit {
 
 
 
-  removeFromCart(productname:string){
-    this.productimg = this.productimg.filter((ele:any)=> ele.productname != productname)
+  removeFromCart(product:any){
+    this.productimg = this.productimg.filter((ele:any)=> ele.productname != product.productname)
     this.calculateCartAmount()
+    this.fetch.deleteCartitem(product)
+
   }
 
   calculateCartAmount(){
@@ -137,7 +141,7 @@ export class CartComponent implements OnInit {
       return val1 + val2
     },0)
     console.log(this.carttotalamount)
-    this.fetch.cartitems = this.productimg
+    // this.fetch.cartitems = this.productimg
   }
 
 }

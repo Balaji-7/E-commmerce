@@ -1,10 +1,11 @@
-/* Global reset and basic styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+.error{
+    color: red;
+}
 h1{
     margin-bottom: 30px;
     text-align: center;
@@ -15,7 +16,7 @@ body {
     padding: 20px;
 }
 
-/* Form container */
+
 .info-container {
     background-color: #fff;
     max-width: 600px;
@@ -25,7 +26,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form styling */
+
 form {
     display: grid;
     gap: 10px;
@@ -55,8 +56,10 @@ input[type="number"]:focus {
     border-color: #66afe9;
     box-shadow: 0 0 5px #66afe9;
 }
-
-input[type="submit"] {
+.register{
+    padding: 10px;
+}
+.buttons {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -70,11 +73,10 @@ input[type="submit"] {
     border-radius: 4px;
 }
 
-input[type="submit"]:hover {
+.buttons:hover {
     background-color: #45a049;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .info-container {
         padding: 10px;
@@ -91,10 +93,11 @@ input[type="submit"]:hover {
 }
  
 
-/*  */
 
 .login-container {
-    background-color: #fff;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(237,198,114,1) 100%);
+    color: white;
+    font-weight: bolder;
     max-width: 400px;
     padding: 30px;
     margin-top: 5%;
@@ -103,7 +106,6 @@ input[type="submit"]:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form styling */
 form {
     display: grid;
     gap: 10px;
@@ -134,7 +136,7 @@ input[type="password"]:focus {
     box-shadow: 0 0 5px #66afe9;
 }
 
-input[type="submit"] {
+.buttons {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -148,10 +150,15 @@ input[type="submit"] {
     border-radius: 4px;
 }
 
-input[type="submit"]:hover {
+.buttons:hover {
     background-color: #45a049;
 }
-
+.readonlyclass{
+    background-color: #f0f0f0; 
+    color: #666;
+    border: 1px solid #ccc; 
+    cursor: not-allowed; 
+}
 .order{
     display: flex;
     gap: 30px;
@@ -183,8 +190,6 @@ input[type="submit"]:hover {
     color: #45a049;
     font-weight: bolder;
 }
-
-/* Responsive adjustments */
 
 @media screen and (max-width:1060px) {
     .login-container{

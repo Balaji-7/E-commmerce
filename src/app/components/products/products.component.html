@@ -1,4 +1,4 @@
-<div class="menu-container">
+<!-- <div class="menu-container">
  
     <div class="category">
 
@@ -54,4 +54,16 @@
     
     
     
-</div>
+</div> -->
+
+<div class="menu-container">
+    <h1 class="page-title">Shop by Category</h1>
+    <div class="category">
+      <div class="menu" *ngFor="let category of productCategories">
+        <img [src]="category.image" alt="{{ category.name }}">
+        <h2>{{ category.name }}</h2>
+      </div>
+    </div>
+  </div>
+  
+  

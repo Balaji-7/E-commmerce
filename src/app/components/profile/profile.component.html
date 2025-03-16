@@ -1,0 +1,40 @@
+<h1 class="title">Profile</h1>
+
+<div class="user-container">
+  <div class="profile-container">
+    <div class="profile-img">
+      <img
+        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+        alt="Profile Picture"
+      />
+      <div class="options">
+        <button class="upload-btn">Upload Profile</button>
+        <button class="logout-btn" (click)="logout()">↩️ Logout</button>
+      </div>
+    </div>
+
+    <div class="user-info" *ngFor="let value of userinfo">
+      <h3>NAME: <span>{{ value.name || '------' }}</span></h3>
+      <h3>EMAIL: <span>{{ value.email || '------' }}</span></h3>
+      <h3>MOBILE: <span>{{ value.mobile || '------' }}</span></h3>
+      <h3>STREET: <span>{{ value.street || '------' }}</span></h3>
+      <h3>CITY: <span>{{ value.city || '------' }}</span></h3>
+      <h3>STATE: <span>{{ value.state || '------' }}</span></h3>
+      <h3>COUNTRY: <span>{{ value.country || '------' }}</span></h3>
+      <h3>PINCODE: <span>{{ value.pincode || '------' }}</span></h3>
+    </div>
+
+    <div class="action-buttons">
+      <button class="update-btn" (click)="update()">Update Details</button>
+      <button class="view-orders-btn">View Orders</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<div class="orders-container">
+    <h1>Orders</h1>
+</div> -->
+
+

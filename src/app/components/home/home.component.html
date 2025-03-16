@@ -1,156 +1,41 @@
-<!-- <p>Check out our <a routerLink="/products">products</a></p> -->
+<p class="info-text">Check out our <a routerLink="/products">products</a></p>
 
 <div class="container">
-
     <div class="location">
-        <h3>
-            🌎  Delivering to
-         Virudhunagar-626001  🔽</h3>
+        <h3>🌎 Delivering to Virudhunagar-626001 <span>🔽</span></h3>
     </div>
 
-
-    <div class="produt-categories" *ngIf="!ismore">
-        <div class="products" (click)="opencategory()">
-            <img src="https://img.freepik.com/free-vector/flat-design-smartphone-different-perspectives_52683-52558.jpg"
-                width="60px" height="60px">
-            <p class="desc">Mobiles</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://t3.ftcdn.net/jpg/01/76/97/56/360_F_176975606_NENcObythCwyPxA6n5vSKxwc8lVLa3In.jpg"
-                width="60px" height="60px">
-            <p class="desc">Electronics</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbCrita0LJdqfGbryAL2dk3T9HFe1t5zyJ1A&s"
-                width="60px" height="60px">
-            <p class="desc">Beauty</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://static.toiimg.com/thumb/msid-103872472,imgsize-103834,width-400,resizemode-4/103872472.jpg"
-                width="60px" height="60px">
-            <p class="desc">Fashion</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFT1vLJRfzn5PrO4I7wdqSkC7wZjUEr7kvQ&s"
-                width="60px" height="60px">
-            <p class="desc">Furniture</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://st2.depositphotos.com/4431055/11473/i/450/depositphotos_114730670-stock-illustration-toys-collection-isolated.jpg"
-                width="60px" height="60px">
-            <p class="desc"> Toys</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://cdn.grabon.in/gograbon/images/web-images/uploads/1618548899692/groceries-offers.jpg"
-                width="60px" height="60px">
-            <p class="desc">Groceries</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://media.istockphoto.com/id/1262703823/vector/last-minute-limited-offer-with-clock-for-sale-promo-button-logo-or-banner-or-red-background.jpg?s=612x612&w=0&k=20&c=MkGZunBxsoz7yNA9jA2gDeP9yooqutV6Xuc44zv65tk="
-                width="60px" height="60px">
-            <p class="desc">Deals</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffuZx6fpy6d_w_L-QZOANv0eJ62T7KUAG0w&s"
-                width="60px" height="60px">
-            <p class="desc">Appliances</p>
-        </div><hr>
-        <div class="products" (click)="more()">
-            <img src="https://previews.123rf.com/images/valentint/valentint1512/valentint151203903/49467158-more-icon-internet-button-on-white-background.jpg"
-                width="80px" height="110px">
-            <!-- <p class="desc" >More</p> -->
-        </div>
-        </div>
-
-
-
-
-
-
-
-        
-        <div class="produt-categories" *ngIf="ismore">
-
-            <div class="products" (click)="back()">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyQvRAzrlIJgOotat72jtuiMLxh2wXcL0H5Q&s"
-                    width="60px" height="60px">
-                <p class="desc" >Back</p>
-            </div><hr>
-            <div class="products">
-                <img src="https://st2.depositphotos.com/4431055/11473/i/450/depositphotos_114730670-stock-illustration-toys-collection-isolated.jpg"
-                    width="60px" height="60px">
-                <p class="desc"> Toys</p>
-            </div><hr>
-            <div class="products">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFT1vLJRfzn5PrO4I7wdqSkC7wZjUEr7kvQ&s"
-                    width="60px" height="60px">
-                <p class="desc">Furniture</p>
-            </div><hr>
-            <div class="products">
-                <img src="https://st2.depositphotos.com/4431055/11473/i/450/depositphotos_114730670-stock-illustration-toys-collection-isolated.jpg"
-                    width="60px" height="60px">
-                <p class="desc"> Toys</p>
-            </div><hr>
-        <div class="products">
-            <img src="https://img.global.news.samsung.com/in/wp-content/uploads/2020/10/Festive-Offers-2-1024x576.jpg"
-                width="60px" height="60px">
-            <p class="desc">Home</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://cdn.grabon.in/gograbon/images/web-images/uploads/1618548899692/groceries-offers.jpg"
-                width="60px" height="60px">
-            <p class="desc">Groceries</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://media.istockphoto.com/id/1262703823/vector/last-minute-limited-offer-with-clock-for-sale-promo-button-logo-or-banner-or-red-background.jpg?s=612x612&w=0&k=20&c=MkGZunBxsoz7yNA9jA2gDeP9yooqutV6Xuc44zv65tk="
-                width="60px" height="60px">
-            <p class="desc">Deals</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffuZx6fpy6d_w_L-QZOANv0eJ62T7KUAG0w&s"
-                width="60px" height="60px">
-            <p class="desc">Appliances</p>
-        </div><hr>
-        <div class="products">
-            <img src="https://i.imgur.com/ODPdVqq.jpg"
-                width="60px" height="60px">
-            <p class="desc">Books</p>
+    <div class="product-categories" *ngIf="!ismore">
+        <div class="products" *ngFor="let category of productCategories" (click)="opencategory(category.name)">
+            <img [src]="category.image" alt="{{ category.name }}">
+            <p class="desc">{{ category.name }}</p>
         </div>
     </div>
 
-
-
-
+    <div class="product-categories" *ngIf="ismore">
+        <div class="products" (click)="back()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyQvRAzrlIJgOotat72jtuiMLxh2wXcL0H5Q&s">
+            <p class="desc">Back</p>
+        </div>
+        <div class="products" *ngFor="let category of productCategories" (click)="opencategory(category.name)">
+            <img [src]="category.image" alt="{{ category.name }}">
+            <p class="desc">{{ category.name }}</p>
+        </div>
+    </div>
 
     <div class="offers-container">
-        <div class="offer" >
-            <img [src]="offerimg" width="90%" height="250px" (click)="openproduct(offerimg)">
-            <img src="https://static.thenounproject.com/png/1776684-200.png" width="10%" style="margin-bottom: 60px;" (click)="next()">
+        <div class="offer">
+            <img [src]="offerimg" class="offer-img" (click)="openproduct(offerimg)">
+            <img src="https://static.thenounproject.com/png/1776684-200.png" class="next-icon" (click)="next()">
         </div>
     </div>
-    <hr>
-    <h1 class="deals-head">Deals For You</h1>
-    <div class="deals-container">
-        
-        <div class="deal" (click)="productdetail($event,'Vivo')">
-            <img src="https://exstatic-in.vivo.com/Oz84QB3Wo0uns8j1/in/1713261480685/1d7088825285b6052a6220d99cd658f2.png_w860-h860.webp" width="500px" height="400px">
-            <p class="dealdescription">80%Off || Limited Time Deal</p>
-        </div>
-    
 
-        <div class="deal" (click)="productdetail($event,'Samsung')">
-            <img src="https://www.reliancedigital.in/wp-content/uploads/2023/08/Samsung_Fold_5_2.jpg" width="500px" height="400px">
-            <p class="dealdescription">80%Off || Limited Time Deal</p>
-        </div>
-        
-        <div class="deal" (click)="productdetail($event,'Portronics')">
-            <img src="https://rukminim2.flixcart.com/image/400/400/kgwld3k0/mobile-holder/b/m/w/por-122-modesk-universal-mobile-holder-black-portronics-original-imafxfb2ztabrxqp.jpeg?q=90&crop=false" width="500px" height="400px">
-            <p class="dealdescription">80%Off || Limited Time Deal</p>
-        </div>
-        
-        <div class="deal" (click)="productdetail($event,'Vivo v30')">
-            <img src="https://smartphonemagazine.nl/wp-content/uploads/2024/04/compressed_img-YwuKMXTcQQA2wrfRNs9KB3bX.png" width="500px" height="400px">
-            <p class="dealdescription">80%Off || Limited Time Deal</p>
+    <hr>
+    <h1 class="deals-head">🔥 Deals For You</h1>
+    <div class="deals-container">
+        <div class="deal" *ngFor="let deal of productCategories" (click)="productdetail($event, deal.name)">
+            <img [src]="deal.image" alt="{{ deal.name }}">
+            <p class="dealdescription">80% Off || Limited Time Deal</p>
         </div>
     </div>
 </div>

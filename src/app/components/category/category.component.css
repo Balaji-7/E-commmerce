@@ -10,12 +10,15 @@
     flex-wrap: wrap;
     margin-top: 50px;
     text-align: center;
-    row-gap: 40px;
+    row-gap: 80px;
+}
+.category:hover{
+    cursor: pointer;
 }
 
 .category>img{
     width: 40%;
-    height: 60%;
+    height: 90%;
 }
 .category>h1{
     background: greenyellow;

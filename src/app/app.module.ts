@@ -12,6 +12,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { UserinformationComponent } from './components/userinformation/userinformation.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     ProductdetailviewComponent,
     CartComponent,
     CategoryComponent,
-    UserinformationComponent
+    UserinformationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

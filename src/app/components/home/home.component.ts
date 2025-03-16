@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
 import { FetchService } from 'src/app/services/fetch.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { FetchService } from 'src/app/services/fetch.service';
 export class HomeComponent implements OnDestroy {
 
   public ismore = false;
-
+  public productCategories :any = []
 
   public offerimg: string = "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/vivo-y75-dancing-waves-min?scl=1&fmt=png-alpha";
 
@@ -20,6 +21,8 @@ export class HomeComponent implements OnDestroy {
   ]
 
   constructor(public route:Router,public fetch:FetchService){
+    window.scrollTo(0, 0);
+    this.productCategories = this.fetch.productCategories
 
   }
 
@@ -38,12 +41,13 @@ export class HomeComponent implements OnDestroy {
     this.ismore = !this.ismore
   }
 
-  opencategory(){
-    this.route.navigate(['category'])
+  opencategory(category:any){
+   
+    this.route.navigate(['category',category])
   }
 
   openproduct(offerimgurl:string){
-    this.fetch.product['imgurl'] = offerimgurl
+    this.fetch.product['productimg'] = offerimgurl
     this.fetch.product['productname'] = "example"
 
     this.route.navigate(['productdetailview'])
@@ -58,7 +62,7 @@ export class HomeComponent implements OnDestroy {
   productdetail(event:any,model:any){
     console.log(event)
     console.log(event.target.currentSrc)
-    this.fetch.product['imgurl'] = event.target.currentSrc
+    this.fetch.product['productimg'] = event.target.currentSrc
     this.fetch.product['productname'] = model
     this.route.navigate(['productdetailview'])
     

@@ -1,45 +1,103 @@
-<div class="info-container" *ngIf="openreg">
+<div class="info-container" *ngIf="(openreg || isupdate)">
     <h1>REGISTER </h1>
-    <form>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
         <label for="Username">Name:</label>
-        <input type="text" placeholder="Enter Your name"><br>
+        <input type="text" name="name" placeholder="Enter Your name" [(ngModel)]="formData.name" #name="ngModel" required><br>
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger" >
+            <div *ngIf="name.errors?.['required']" class="error">Username is required.</div>
+        </div>
+
         <label for="useremail">Email:</label>
-        <input type="email" placeholder="Enter your Email id"><br>
+        <input type="email" name="email"
+         placeholder="Enter your Email id"
+          [(ngModel)]="formData.email"  #email="ngModel"
+           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+         [readonly] = "isupdate"
+         [ngClass]="readonlyfield"
+            required><br>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+            <div *ngIf="email.errors?.['required']" class="error">Email is required.</div>
+            <div *ngIf="email.errors?.['pattern']" class="error">Enter a Valid Email</div>
+        </div>
         <label for="password">Password:</label>
-        <input type="password" placeholder= "Enter Your password"><br>
+        <input type="password" name="password" placeholder="Enter Your password" 
+        [(ngModel)]="formData.password" #password="ngModel" 
+         minlength="4" 
+         [readonly] = "isupdate"
+         [ngClass]="readonlyfield"
+         required><br>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+            <div *ngIf="password.errors?.['required']" class="error">Password is required.</div>
+            <div *ngIf="password.errors?.['minlength']" class="error">Password should be minimum 4 digits</div>
+        </div>
         <label for="mobile">Mobile:</label>
-        <input type="number" placeholder="Enter your Mobile Number"><br><br>
-         <h2>Address</h2>
+        <input type="text" name="mobile" placeholder="Enter your Mobile Number"
+         [(ngModel)]="formData.mobile" #mobile="ngModel" minlength="10" maxlength="10"
+         [readonly] = "isupdate"
+         required><br>
+        <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="text-danger">
+            <div *ngIf="mobile.errors?.['required']" class="error">Mobile Number  is required.</div>
+            <div *ngIf="mobile.errors?.['minlength']" class="error">Mobile Number should be minimum 10 digits</div>
+        </div>
+        <br>
+        
+        <h2>Address</h2>
         <label for="Address">Street:</label>
-
-        <input type="text" placeholder="Enter Your street Name"><br>
+        <input type="text" name="street" placeholder="Enter Your street Name" [(ngModel)]="formData.street"><br>
+        
         <label for="Address">City:</label>
-
-        <input type="text" placeholder="Enter Your city Name"><br>
+        <input type="text" name="city" placeholder="Enter Your city Name" [(ngModel)]="formData.city" #city="ngModel" required><br>
+        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="text-danger">
+            <div *ngIf="city.errors?.['required']" class="error">City  is required.</div>
+        </div>
         <label for="Address">State:</label>
 
-        <input type="text" placeholder="Enter Your state name"><br>
+        <input type="text" name="state" placeholder="Enter Your state name" [(ngModel)]="formData.state" 
+         #state="ngModel" 
+          required><br>
+        <div *ngIf="state.invalid && (state.dirty || state.touched)" class="text-danger">
+            <div *ngIf="state.errors?.['required']" class="error">State  is required.</div>
+        </div>
         <label for="Address">Country:</label>
 
-        <input type="text" placeholder="Enter Your Country name"><br>
+        <input type="text" name="country" placeholder="Enter Your Country name" [(ngModel)]="formData.country" #country="ngModel" required><br>
+        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="text-danger">
+            <div *ngIf="country.errors?.['required']" class="error">Country  is required.</div>
+        </div>
         <label for="pincode">Pincode:</label>
-        <input type="number" placeholder="Enter Your pincode"><br>
-        <input type="submit" (click)="register()" value="REGISTER">
-
-        <input type="submit" (click)="openlogin()" value="(Existing User)  LOGIN">
+        <input type="number" name="pincode" placeholder="Enter Your pincode" #pincode="ngModel" [(ngModel)]="formData.pincode" required><br>
+        <div *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)" class="text-danger">
+            <div *ngIf="pincode.errors?.['required']" class="error">Pincode  is required.</div>
+        </div>
+        <button type="submit" [ngClass]="{'register' : registerForm.invalid, 'buttons':!registerForm.invalid }"
+           [disabled]="registerForm.invalid"
+           *ngIf="!isupdate" >REGISTER</button>
+        <button type="submit" [ngClass]="{'register' : registerForm.invalid, 'buttons':!registerForm.invalid }" 
+        *ngIf="isupdate"  [disabled]="registerForm.invalid">Update</button>
+       
+        <input type="button" class="buttons" (click)="openlogin()" value="(Existing User)  LOGIN">
 
     </form>
 </div>
 
-<div class="login-container" *ngIf="!openreg && !(orders.length > 0)">
+<div class="login-container" *ngIf="(!isupdate && !openreg && !(orders.length > 0))">
     <h2>LOGIN</h2>
-    <form>
+    <form #loginform="ngForm" (ngSubmit)="login(loginform)">
         <label for="useremail">Email:</label>
-        <input type="email" id="useremail" name="useremail" placeholder="Enter your Email"><br>
+        <input type="email" id="useremail" name="useremail" placeholder="Enter your Email" #lemail="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="useremail" required><br>
+        <div *ngIf="lemail.invalid && (lemail.dirty || lemail.touched)" class="text-danger">
+            <div class="error" *ngIf="lemail.errors?.['required']">email  is required.</div>
+            <div class="error" *ngIf="lemail.errors?.['pattern']">Enter a Valid Email</div>
+        </div>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your Password"><br>
-        <input type="submit" (click)="login()" value="LOGIN">
-        <input type="submit" (click)="openregister()" value="(New user) REGISTER">
+        <input type="password" id="password" name="password" placeholder="Enter your Password" #lpassword="ngModel" [(ngModel)]="password" minlength="4" required><br>
+        <div *ngIf="lpassword.invalid && (lpassword.dirty || lpassword.touched)" class="text-danger">
+            <div class="error" *ngIf="lpassword.errors?.['required']">Password  is required.</div>
+            <div class="error" *ngIf="password.errors?.['minlength']">Password should be minimum 4 digits</div>
+        </div>
+        <input type="submit" class="buttons" [ngClass]="{'register' : loginform.invalid, 'buttons':!loginform.invalid }"   [disabled]="loginform.invalid" value="LOGIN">
+        <input type="submit" class="buttons" (click)="openregister()" value="(New user) REGISTER">
     </form>
 </div>
 
@@ -50,22 +108,22 @@
 
     <div class="order" *ngFor="let product of orders">
         <hr>
-        <div class="product" >
-            <img [src]= "product['imgurl']" 
-            width="400px" height="400px">           
+        <div class="product">
+            <img [src]="product['productimg']" width="400px" height="400px">
         </div>
         <div class="info">
-            <h1>{{product['productname']}} 
-                (Stardust Black, 6GB RAM, 128GB Storage) | Powered by 4G sMediaTek Helio G85 | 90Hz Display | 50MP AI Triple Camera
+            <h1>{{product['productname']}}
+                (Stardust Black, 6GB RAM, 128GB Storage) | Powered by 4G sMediaTek Helio G85 | 90Hz Display | 50MP AI
+                Triple Camera
             </h1>
             <h2>4.1 ⭐⭐⭐⭐ &nbsp;&nbsp; 5,419 ratings </h2>
-            <p class="MRP">  MRP:- 35000/-</p>
+            <p class="MRP"> MRP:- 35000/-</p>
             <p class="MRP">Order Payment id : {{paymentid['razorpay_payment_id']}} </p>
-            <hr>    
-           <button class="Buy">Buy Again</button>
-           <button class="track">Track Your Order</button>
-    
+            <hr>
+            <button class="Buy">Buy Again</button>
+            <button class="track">Track Your Order</button>
+
         </div>
     </div>
-    
+
 </div>

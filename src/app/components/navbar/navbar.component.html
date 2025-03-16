@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="nav-container">
     <h1 class="heading"  (click)="home()">🛒SHOPIFY</h1>
     <input type="text" placeholder="🔍 Search for a Products...." >
@@ -6,7 +6,41 @@
         <li class="navoptions" (click)="home()">🏠︎ Home</li>
         <li class="navoptions" (click)="menu()">🛍️Menu</li>
         <li class="navoptions" (click)="cart()">☰Cart</li>
-        <li class="navoptions" (click)="login()">➥Login</li>
+        <li class="navoptions" (click)="login()" *ngIf="!fetch.userdetails.length">➥Login</li>
+        <li class="navoptions" (click)="profile()" *ngIf="fetch.userdetails.length">➥You</li>
     </ul>
 </div>
-<hr>
+<hr> -->
+
+
+<div class="nav-container">
+    <h1 class="heading" (click)="home()">🛒 SHOPIFY</h1>
+
+    <div class="search-box">
+        <input type="text" placeholder="🔍 Search for Products..." />
+    </div>
+
+    <ul class="nav-list">
+        <li class="nav-item" (click)="home()">🏠 Home</li>
+
+        <li class="nav-item dropdown">
+            🛍️ Menu ⬇
+            <ul class="dropdown-content">
+                <li (click)="opencategory('Mobiles')">📱 Mobiles</li>
+                <li (click)="opencategory('Electronics')">💻 Electronics</li>
+                <li (click)="opencategory('Fashion')">👗 Fashion</li>
+                <li (click)="opencategory('Furniture')">🛏️ Furniture</li>
+                <li (click)="opencategory('Toys')">🧸 Toys</li>
+                <li (click)="opencategory('Groceries')">🛒 Groceries</li>
+                <li (click)="opencategory('Deals')">🔥 Deals</li>
+            </ul>
+        </li>
+
+        <li class="nav-item" (click)="cart()">🛒 Cart</li>
+        <li class="nav-item" (click)="login()" *ngIf="!fetch.userdetails.length">➥ Login</li>
+        <li class="nav-item" (click)="profile()" *ngIf="fetch.userdetails.length">➥ You</li>
+    </ul>
+</div>
+
+<!-- <hr> -->
+

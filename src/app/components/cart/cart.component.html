@@ -1,34 +1,43 @@
-
 <div class="cart-buy">
-<h1>{{cartitemscount}} Items Selected</h1>
-    <button class="buy" (click)="cartbuy()">Proceed to Buy ( {{cartitemscount}} Items) INR {{carttotalamount}}</button>
-
-</div>
-<p class="select-all">
-<input type="checkbox" class="allselect" [(ngModel)]="selectAllChecked" (change)="selectallchanged()"> &nbsp;Select all items
-</p>
-
-<div *ngFor="let product of productimg">
-<div class="cart-container" >
-    <div class="product">
+    <h1>{{ cartitemscount }} Items Selected</h1>
+    <button class="buy" (click)="cartbuy()">
+      Proceed to Buy ({{ cartitemscount }} Items) - INR {{ carttotalamount }}
+    </button>
+  </div>
+  
+  <p class="select-all">
+    <input type="checkbox" class="allselect" [(ngModel)]="selectAllChecked" (change)="selectallchanged()"> 
+    <label>Select all items</label>
+  </p>
+  
+  <div *ngFor="let product of productimg">
+    <div class="cart-container">
+      <div class="product">
         <input type="checkbox" class="check" [(ngModel)]="product.isselected" (change)="productcheckchanged()">
-        <img [src]="product.imgurl"
-        width="200px" height="200px">
-       
-        
+        <img [src]="product.productimg" alt="Product Image">
+      </div>
+      
+      <div class="desc">
+        <h2>{{ product.productname }}</h2>
+        <p class="sub-text">Stardust Black, 6GB RAM, 128GB Storage | 90Hz Display | 50MP AI Triple Camera</p>
+        <p class="info">400+ bought this month</p>
+        <h3 class="price">RS. {{ product.count * product.price }}</h3>
+        <h4 class="stock">✔ In stock</h4>
+  
+        <div class="actions">
+          <button class="buy-btn" (click)="buy(product)">Buy Now</button>
+          <button class="delete-btn" (click)="removeFromCart(product)">Delete</button>
+          <button class="more-btn">See More Like This</button>
+        </div>
+  
+        <h3 class="quantity">
+          Quantity 
+          <span class="qty-btn" (click)="quantitycount(product, 'decrease')">➖</span> 
+          | {{ product.count }} | 
+          <span class="qty-btn" (click)="quantitycount(product, 'increase')">➕</span>
+        </h3>
+      </div>
     </div>
-    <div class="desc">
-    <h1>{{product.productname}}(Stardust Black, 6GB RAM, 128GB Storage) | Powered by 4G MediaTek Helio G85 | 90Hz Display | 
-        50MP AI Triple Camera</h1>
-        <p>400+ bought this Month</p>
-        <h1> RS.{{product.count * product.price}}</h1>
-        <h3 class="stock">In stock</h3>
-        <button (click)="buy(product)">Buy Now</button>
-        <h1 class="quantity"> Quantity <span (click)="quantitycount(product.productname,'decrease')"> ➖ </span>| {{product.count}} | <span (click)="quantitycount(product.productname,'increase')"> ➕ </span></h1>
-        <button (click)="removeFromCart(product.productname)">Delete</button>
-        <button>See More Like this</button>
-    </div>
-</div>
-<hr>
-</div>
-
+    <hr>
+  </div>
+  

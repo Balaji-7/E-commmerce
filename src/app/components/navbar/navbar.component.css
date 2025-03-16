@@ -1,10 +1,126 @@
+/* Light & Modern Theme */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: #f8f9fa;
+    color: #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 
+.heading {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+.heading:hover {
+    color: #0056b3;
+}
+
+/* Search Bar */
+.search-box input {
+    width: 250px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Navigation List */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+.nav-item {
+    cursor: pointer;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 1000;
+    width: 160px;
+}
+
+.dropdown-content li {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropdown-content li:hover {
+    background: #007bff;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-box input {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+/* 
 
 .nav-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: sandybrown ;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+
     color: slateblue;
     position: sticky;
     top: 0px; 
@@ -21,6 +137,7 @@ input{
 }
 h1{
     margin-left: 20px;
+    color: whitesmoke;
 }
 ul{
     margin-right: 60px;
@@ -67,11 +184,7 @@ ul>li{
 
 
 @media screen and (max-width:750px){
-    /* .nav-container{
-        justify-content: space-around;
-        flex-direction: column;
-        align-items: center;
-    } */
+
     input{
         width: 100px;
         height: 40px;
@@ -129,129 +242,11 @@ ul>li{
         height: 20px;
         margin: 15px;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* .nav-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
-    background: skyblue;
-    height: 100px;
-    border: 2px solid white;
-    position: sticky;
-    top: 0;
-    z-index: 1000
-}
-.nav-container:hover{
-    cursor: pointer;
-}
-.nav-container>h1{
-    margin-left: 20px;
-    font-family:cursive;
-    border-radius: 10%;
-    
-}
-.nav-container>button:hover{
-    cursor: pointer;
-}
-input{
-    width: 500px;
-    border-radius: 10%;
-}
-
-.nav-container>ul{
-    list-style: none;
-    display: flex;
-    margin-top: 20px;
-
-}
-.nav-container>ul>li{
-    background: black;
-    color: white;
-    margin-right: 30px;
-    margin-left: 20px;
-    padding: 10px;
-    height:fit-content;
-    font-size: 25px;
-}
-
-
-
-@media screen and (max-width:1425px) {
-    h1{
-        display: inline-block;
-        height: 5px;
-    }
-    .nav-container{
-       
-        height: 180px
-    }
-    .nav-container>ul{
-        
-        display: inline;  
-    }
-   .nav-container>input{
-    color: red;
-   }
-    .nav-container>ul>li{
-        display: inline-block;
-        margin: 5px;
-    }
-    input{
-        height: 80px;
-    }
-}
-
-@media screen and (max-width:1127px) {
-    h1{
-        display: inline-block;
-        height: 5px;
-    }
-    .nav-container{
-        height: 200px;
-    }
-   
-    .nav-container>ul>li{
-        display: inline-block;
-        
-        margin-top: 10px;
-    }
-}
-
-
-@media screen and (max-width:700px) {
-
-    h1{
-        display: inline-block;
-        height: 15px;
-    }
-   input{
-    margin-top: 20px;
-   }
-    .nav-container{
-        height: 280px;
-    }
-    .nav-container>ul>li{
-        display: inline-block;
-        margin: 10px;
-    }
-}
-
-@media screen and (max-width:600px) {
-    
-    .nav-container{
-        height: 350px;
-    }
 } */
+
+
+
+
+
+
+

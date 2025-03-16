@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FetchService } from 'src/app/services/fetch.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  // public islogin :boolean = false
 
-  constructor(private route : Router){
-
+  constructor(private route : Router,public fetch:FetchService){
+    // this.islogin = this.fetch.userdetails.length ? true : false
   }
 
   home(){
@@ -26,5 +28,11 @@ export class NavbarComponent {
     console.log("Login  Page")
     this.route.navigate(['userinfo'])
   }
- 
+  profile(){
+    this.route.navigate(['profile'])
+
+  }
+  opencategory(menuItem:any){
+    console.log(menuItem)
+  }
 }
